@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="LudumDare55_2024"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://UI/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[aseprite_importers]
+
+aseprite_executable_path="E:/Steam/steamapps/common/Aseprite/Aseprite.exe"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg")
 
 [input]
 
@@ -22,3 +30,8 @@ config/icon="res://icon.svg"
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+environment/volumetric_fog/use_filter=0

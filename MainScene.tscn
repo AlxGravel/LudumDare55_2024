@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ojxmbtcou5rk"]
 
-[ext_resource type="PackedScene" path="res://FakeGamePlaceholder.tscn" id="1_17c4p"]
+[ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://UI/FakeGamePlaceholder.tscn" id="1_17c4p"]
 [ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
 
 [node name="Label" instance=ExtResource("1_17c4p")]
