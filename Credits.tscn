@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://bevljc1ihb7c0"]
+
+[ext_resource type="Script" path="res://Credits.gd" id="1_qr56g"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qr56g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Alexandre" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Alexandre Gravel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Programmeur" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Programmeur
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Manu" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Manu Boucher
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fauxgrammeur" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Fauxgrammeur
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

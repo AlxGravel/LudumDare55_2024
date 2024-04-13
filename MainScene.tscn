@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://q7l0i4622wgo"]
+
+[ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://FakeGamePlaceholder.tscn" id="1_17c4p"]
+
+[node name="Label" instance=ExtResource("1_17c4p")]
