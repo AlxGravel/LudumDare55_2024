@@ -1,17 +1,19 @@
 extends Node
 
 var cursor_speed = 1
-var current_line = Line2D.new()
+var lines = [Line2D.new()]
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.add_child(current_line)
+	self.add_child(lines.back())
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
 
 
 func _input(event):
@@ -22,12 +24,19 @@ func _input(event):
 		$Cursor.position = $Cursor.position.clamp(visible_rect.position, visible_rect.end)
 
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			current_line.add_point($Cursor.position)
+			lines.back().add_point($Cursor.position)
 
 	elif event is InputEventMouseButton:
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			current_line = Line2D.new()
-			self.add_child(current_line)
+			lines.push_back(Line2D.new())
+			self.add_child(lines.back())
+
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			for line in lines:
+				line.queue_free()
+			lines.clear()
+			lines.push_back(Line2D.new())
+			self.add_child(lines.back())
 
 
 
