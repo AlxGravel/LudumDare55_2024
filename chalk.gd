@@ -32,6 +32,7 @@ func _input(event):
 			self.add_child(lines.back())
 
 		if event.button_index == MOUSE_BUTTON_RIGHT:
+			#clear chalk
 			for line in lines:
 				line.queue_free()
 			lines.clear()

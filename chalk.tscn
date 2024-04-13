@@ -1,24 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://jmmoijqbqke7"]
+[gd_scene load_steps=4 format=3 uid="uid://jmmoijqbqke7"]
 
 [ext_resource type="Script" path="res://chalk.gd" id="2_wv4cq"]
 [ext_resource type="Texture2D" uid="uid://ciejehp5f45qg" path="res://icon.svg" id="3_2v2qh"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7f4fn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_86vgh"]
 radius = 57.85
 
 [node name="Chalk" type="Node"]
 script = ExtResource("2_wv4cq")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(665, 258)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-material = SubResource("CanvasItemMaterial_7f4fn")
-position = Vector2(-293, -250)
-build_mode = 1
-polygon = PackedVector2Array(157, 174, 125, 346, 396, 528, 450, 99)
 
 [node name="Cursor" type="Area2D" parent="."]
 position = Vector2(234, 357)
@@ -28,5 +17,3 @@ texture = ExtResource("3_2v2qh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor"]
 shape = SubResource("CircleShape2D_86vgh")
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
