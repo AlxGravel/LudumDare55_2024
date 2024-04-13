@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ojxmbtcou5rk"]
+[gd_scene load_steps=7 format=3 uid="uid://ojxmbtcou5rk"]
 
 [ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://UI/FakeGamePlaceholder.tscn" id="1_17c4p"]
 [ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
 [ext_resource type="PackedScene" uid="uid://jmmoijqbqke7" path="res://chalk.tscn" id="3_4qgjg"]
-[ext_resource type="Texture2D" uid="uid://nmtmgbdebfvq" path="res://Art/BackgroundPlaceholder.png" id="4_mskxk"]
+[ext_resource type="Texture2D" uid="uid://w13jfg1ee8cu" path="res://Art/Background.png" id="4_yr2vb"]
+[ext_resource type="Texture2D" uid="uid://drmsst85yb0pe" path="res://Art/Pentagram.png" id="5_elon3"]
+[ext_resource type="Script" path="res://Art/Pentagram.gd" id="6_s0scl"]
 
 [node name="Label" instance=ExtResource("1_17c4p")]
 grow_horizontal = 2
@@ -14,6 +16,12 @@ script = ExtResource("2_qk5gl")
 [node name="Chalk" parent="." index="0" instance=ExtResource("3_4qgjg")]
 
 [node name="Background" type="Sprite2D" parent="." index="1"]
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_mskxk")
+scale = Vector2(5.41667, 5.41667)
+texture = ExtResource("4_yr2vb")
 centered = false
+
+[node name="Pentagram" type="Sprite2D" parent="Background" index="0"]
+modulate = Color(0.533333, 0, 0, 1)
+texture = ExtResource("5_elon3")
+centered = false
+script = ExtResource("6_s0scl")
