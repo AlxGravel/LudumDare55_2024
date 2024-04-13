@@ -1,5 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://q7l0i4622wgo"]
+[gd_scene load_steps=3 format=3 uid="uid://q7l0i4622wgo"]
 
 [ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://FakeGamePlaceholder.tscn" id="1_17c4p"]
+[ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
 
 [node name="Label" instance=ExtResource("1_17c4p")]
+script = ExtResource("2_qk5gl")
+
+[node name="Main menu" type="Button" parent="." index="0"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Main Menu
+"
+
+[connection signal="pressed" from="Main menu" to="." method="_on_main_menu_pressed"]
