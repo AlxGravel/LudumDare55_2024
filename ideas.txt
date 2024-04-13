@@ -1,0 +1,6 @@
+#difficultées:
+	- tremblotements
+	- craie qui ne veut plus écrire
+	- décor qui disparait
+	- curseur qui disparait
+	

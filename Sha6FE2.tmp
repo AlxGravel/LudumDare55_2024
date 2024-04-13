@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://caoob312y5h2w"]
+
+[ext_resource type="Script" path="res://ShapeDrawDetector.gd" id="1_gai7l"]
+[ext_resource type="PackedScene" uid="uid://jmmoijqbqke7" path="res://chalk.tscn" id="1_wjd5h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d00sc"]
+radius = 24.0
+height = 407.724
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcqdl"]
+radius = 23.4093
+height = 405.637
+
+[node name="ShapeDrawDetector" type="Node2D"]
+script = ExtResource("1_gai7l")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(273, 183)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(149, 165)
+rotation = 0.351591
+shape = SubResource("CapsuleShape2D_d00sc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(274, 164)
+rotation = -0.369323
+shape = SubResource("CapsuleShape2D_lcqdl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(220, 143)
+rotation = -1.54451
+shape = SubResource("CapsuleShape2D_lcqdl")
+
+[node name="Chalk" parent="." instance=ExtResource("1_wjd5h")]
+
+[connection signal="point_added" from="Chalk" to="." method="_on_chalk_point_added"]

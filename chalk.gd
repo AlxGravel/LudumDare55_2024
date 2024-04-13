@@ -1,7 +1,11 @@
 extends Node
 
-var cursor_speed = 1
-var lines = [Line2D.new()]
+signal point_added(point)
+signal cleared_chalk
+
+@export var cursor_speed = 1
+@export var chalk_is_enabled = true
+@export var lines = [Line2D.new()]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,9 +26,11 @@ func _input(event):
 		#confine the cursor to the viewport
 		var visible_rect = get_viewport().get_visible_rect()
 		$Cursor.position = $Cursor.position.clamp(visible_rect.position, visible_rect.end)
-
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		#draw chalk
+		if chalk_is_enabled and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			lines.back().add_point($Cursor.position)
+			point_added.emit($Cursor.global_position)
+
 
 	elif event is InputEventMouseButton:
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -38,7 +44,6 @@ func _input(event):
 			lines.clear()
 			lines.push_back(Line2D.new())
 			self.add_child(lines.back())
-
 
 
 func _on_area_2d_area_entered(area):
