@@ -21,6 +21,7 @@ func _on_shape_draw_detector_drew_outside_model():
 
 func _on_chalk_cleared_chalk():
 	$Chalk.can_draw = true
+	$Chalk.cursor_speed = 1
 	$BigCandleL.playburning()
 	$BigCandleR.playburning()
 	if $MainTutorial != null:
@@ -37,8 +38,29 @@ func _on_chalk_left_clicked():
 func _on_chalk_point_added(point):
 	if $MainTutorial != null:
 		$MainTutorial.nextTutorialStep()
-	if $ShapeDrawDetector.get_completion_rate() >= 1:
+
+	var completion_rate = $ShapeDrawDetector.get_completion_rate()
+	if completion_rate >= 1:
 		$CanvasLayer/UWonText.visible = true
 		$Chalk.can_draw = false
+	elif completion_rate > 0.3:
+		slowdown()
 
+var slowdown_called_flag = false
+func slowdown():
+	if slowdown_called_flag:
+		return
+	slowdown_called_flag = true
+	$Challenges.show_challenge(1)
+	var timer = Timer.new()
+	timer.wait_time = 1
+	timer.one_shot = true
+	self.add_child(timer)
+	timer.start()
+	timer.timeout.connect(slowdownImpl)
+
+
+func slowdownImpl():
+	$Chalk.cursor_speed = 0.2
+	$Challenges.hide_all_challenges()
 

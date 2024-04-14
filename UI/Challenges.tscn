@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjqsh4k20y0jw"]
+
+[ext_resource type="Script" path="res://UI/Challenges.gd" id="1_tiknw"]
+[ext_resource type="PackedScene" uid="uid://cchhsv5fjvfiu" path="res://UI/TextBox.tscn" id="2_cl5um"]
+
+[node name="Challenges" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tiknw")
+
+[node name="Challenge1" parent="." instance=ExtResource("2_cl5um")]
+visible = false
+layout_mode = 0
+offset_left = 44.0
+offset_top = 38.0
+offset_right = 399.0
+offset_bottom = 161.0
+text = "You feel faint..."
