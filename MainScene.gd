@@ -19,3 +19,5 @@ func _on_shape_draw_detector_drew_outside_model():
 
 func _on_chalk_cleared_chalk():
 	$Chalk.can_draw = true
+	$BigCandleL.playburning()
+	$BigCandleR.playburning()
