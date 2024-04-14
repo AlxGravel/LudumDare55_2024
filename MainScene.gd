@@ -135,7 +135,7 @@ func quicken():
 	quicken_called_flag = true
 	$Challenges.show_challenge(4)
 
-	$Chalk.cursor_speed = 1
+	$Chalk.cursor_speed = -1
 
 	var timer = Timer.new()
 	timer.wait_time = 8

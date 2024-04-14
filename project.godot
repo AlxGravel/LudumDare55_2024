@@ -22,7 +22,7 @@ aseprite_executable_path="E:/Steam/steamapps/common/Aseprite/Aseprite.exe"
 [autoload]
 
 BackgroundMusic="*res://BackgroundMusic.tscn"
-SfxRain="*res://SFX_Rain.tscn"
+SfxRain="res://SFX_Rain.tscn"
 
 [display]
 

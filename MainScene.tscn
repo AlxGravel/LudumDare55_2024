@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://drmsst85yb0pe" path="res://Art/Pentagram.png" id="5_elon3"]
 [ext_resource type="Script" path="res://Art/Pentagram.gd" id="6_s0scl"]
 [ext_resource type="PackedScene" uid="uid://caoob312y5h2w" path="res://ShapeDrawDetector.tscn" id="7_6bhpp"]
-[ext_resource type="PackedScene" path="res://Art/SmallCandlesPositionned.tscn" id="7_n6w5r"]
+[ext_resource type="PackedScene" uid="uid://bbfcng4thdsle" path="res://Art/SmallCandlesPositionned.tscn" id="7_n6w5r"]
 [ext_resource type="PackedScene" uid="uid://dyjva6gp2fh00" path="res://Art/BigCandle.tscn" id="8_18dws"]
 [ext_resource type="PackedScene" uid="uid://2yhxgo1s80gs" path="res://UI/MainTutorial.tscn" id="9_trfjn"]
 [ext_resource type="PackedScene" uid="uid://dty5hawemf1bn" path="res://UI/UWonText.tscn" id="10_mim71"]
