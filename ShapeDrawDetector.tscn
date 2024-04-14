@@ -1,17 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://caoob312y5h2w"]
+[gd_scene load_steps=2 format=3 uid="uid://caoob312y5h2w"]
 
 [ext_resource type="Script" path="res://ShapeDrawDetector.gd" id="1_gai7l"]
 
-[sub_resource type="Curve2D" id="Curve2D_e0r5s"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 555, 135, 0, 0, 0, 0, 337, 597, 0, 0, 0, 0, 746, 335, 0, 0, 0, 0, 555, 135)
-}
-point_count = 4
-
 [node name="ShapeDrawDetector" type="Node2D"]
 script = ExtResource("1_gai7l")
-
-[node name="DrawModel" type="Node2D" parent="."]
-
-[node name="Path2D" type="Path2D" parent="DrawModel"]
-curve = SubResource("Curve2D_e0r5s")

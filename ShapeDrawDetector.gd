@@ -25,7 +25,7 @@ func _on_chalk_point_added(point):
 
 func is_in_model(point: Vector2) -> bool:
 	var shortestDistance = null
-	for path in $DrawModel.get_children():
+	for path in get_children():
 		if path is Path2D:
 			var distanceToCurve = path.curve.get_closest_point(point).distance_to(point)
 			if shortestDistance == null or distanceToCurve < shortestDistance:

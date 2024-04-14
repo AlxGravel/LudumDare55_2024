@@ -4,7 +4,7 @@ signal point_added(point)
 signal cleared_chalk
 
 @export var cursor_speed = 1
-@export var chalk_is_enabled = true
+@export var can_draw = true
 @export var lines = [Line2D.new()]
 
 
@@ -27,7 +27,7 @@ func _input(event):
 		var visible_rect = get_viewport().get_visible_rect()
 		$Cursor.position = $Cursor.position.clamp(visible_rect.position, visible_rect.end)
 		#draw chalk
-		if chalk_is_enabled and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if can_draw and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			lines.back().add_point($Cursor.position)
 			point_added.emit($Cursor.global_position)
 
@@ -44,6 +44,7 @@ func _input(event):
 			lines.clear()
 			lines.push_back(Line2D.new())
 			self.add_child(lines.back())
+			cleared_chalk.emit()
 
 
 func _on_area_2d_area_entered(area):

@@ -4,7 +4,7 @@ var elapsedtime = 0
 
 func _ready():
 	modulate = Color(1,0,0,1)
-	
+
 
 func _process(delta):
 	elapsedtime += delta

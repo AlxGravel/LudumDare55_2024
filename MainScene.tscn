@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ojxmbtcou5rk"]
+[gd_scene load_steps=15 format=3 uid="uid://ojxmbtcou5rk"]
 
 [ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://UI/FakeGamePlaceholder.tscn" id="1_17c4p"]
 [ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
@@ -6,6 +6,49 @@
 [ext_resource type="Texture2D" uid="uid://w13jfg1ee8cu" path="res://Art/Background.png" id="4_yr2vb"]
 [ext_resource type="Texture2D" uid="uid://drmsst85yb0pe" path="res://Art/Pentagram.png" id="5_elon3"]
 [ext_resource type="Script" path="res://Art/Pentagram.gd" id="6_s0scl"]
+[ext_resource type="PackedScene" uid="uid://caoob312y5h2w" path="res://ShapeDrawDetector.tscn" id="7_6bhpp"]
+
+[sub_resource type="Curve2D" id="Curve2D_x62ub"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 432, 160, 0, 0, 0, 0, 605, 574, 0, 0, 0, 0, 695, 145, 0, 0, 0, 0, 316, 388, 0, 0, 0, 0, 843, 356, 0, 0, 0, 0, 432, 160)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_kxh2y"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 316, 385, -146, 91, 146, -91, 430, 161)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_0mssl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 319, 388, -259, 11, 259, -11, 606, 575, 0, 0, 0, 0, 607, 573)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_plce0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 608, 575, -21, 209, 21, -209, 839, 356)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_fldpy"]
+_data = {
+"points": PackedVector2Array(-152, -70, 152, 70, 694, 144, 0, 0, 0, 0, 839, 353)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_pcr1s"]
+_data = {
+"points": PackedVector2Array(-130, 68, 130, -68, 437, 158, 0, 0, 0, 0, 690, 144)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1viow"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 554, 344, 0, 0, 0, 0, 615, 338, 0, 0, 0, 0, 629, 284, 0, 0, 0, 0, 575, 256, 0, 0, 0, 0, 529, 293, 0, 0, 0, 0, 554, 344)
+}
+point_count = 6
 
 [node name="Label" instance=ExtResource("1_17c4p")]
 grow_horizontal = 2
@@ -26,3 +69,29 @@ texture = ExtResource("5_elon3")
 centered = false
 script = ExtResource("6_s0scl")
 
+[node name="ShapeDrawDetector" parent="." index="2" instance=ExtResource("7_6bhpp")]
+
+[node name="Path2D" type="Path2D" parent="ShapeDrawDetector" index="0"]
+curve = SubResource("Curve2D_x62ub")
+
+[node name="Path2D2" type="Path2D" parent="ShapeDrawDetector" index="1"]
+curve = SubResource("Curve2D_kxh2y")
+
+[node name="Path2D3" type="Path2D" parent="ShapeDrawDetector" index="2"]
+curve = SubResource("Curve2D_0mssl")
+
+[node name="Path2D5" type="Path2D" parent="ShapeDrawDetector" index="3"]
+curve = SubResource("Curve2D_plce0")
+
+[node name="Path2D6" type="Path2D" parent="ShapeDrawDetector" index="4"]
+curve = SubResource("Curve2D_fldpy")
+
+[node name="Path2D4" type="Path2D" parent="ShapeDrawDetector" index="5"]
+curve = SubResource("Curve2D_pcr1s")
+
+[node name="Path2D7" type="Path2D" parent="ShapeDrawDetector" index="6"]
+curve = SubResource("Curve2D_1viow")
+
+[connection signal="cleared_chalk" from="Chalk" to="." method="_on_chalk_cleared_chalk"]
+[connection signal="point_added" from="Chalk" to="ShapeDrawDetector" method="_on_chalk_point_added"]
+[connection signal="drew_outside_model" from="ShapeDrawDetector" to="." method="_on_shape_draw_detector_drew_outside_model"]
