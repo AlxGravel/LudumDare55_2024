@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp0dasfi511kt"]
+
+[ext_resource type="Texture2D" uid="uid://2autjirpuld7" path="res://Art/Window.png" id="1_cjqku"]
+[ext_resource type="Script" path="res://Art/Thunder.gd" id="1_vr0gy"]
+
+[sub_resource type="Animation" id="Animation_g8ntc"]
+resource_name = "Flash"
+length = 10.0
+loop_mode = 1
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Window:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.15, 2.2, 2.25, 2.35, 2.4, 2.5, 2.525, 2.55, 2.575, 2.65, 2.75, 2.9, 2.95, 2.975, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n63eb"]
+_data = {
+"Flash": SubResource("Animation_g8ntc")
+}
+
+[node name="Thunder" type="Node2D"]
+script = ExtResource("1_vr0gy")
+
+[node name="Window" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(578, 322)
+scale = Vector2(5.625, 5.625)
+texture = ExtResource("1_cjqku")
+
+[node name="AnimationPlayerCrap" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n63eb")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationPlayerCrap")
+libraries = {
+"": SubResource("AnimationLibrary_n63eb")
+}

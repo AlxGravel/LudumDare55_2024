@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ojxmbtcou5rk"]
+[gd_scene load_steps=23 format=3 uid="uid://ojxmbtcou5rk"]
 
 [ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://UI/FakeGamePlaceholder.tscn" id="1_17c4p"]
 [ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
@@ -7,13 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://drmsst85yb0pe" path="res://Art/Pentagram.png" id="5_elon3"]
 [ext_resource type="Script" path="res://Art/Pentagram.gd" id="6_s0scl"]
 [ext_resource type="PackedScene" uid="uid://caoob312y5h2w" path="res://ShapeDrawDetector.tscn" id="7_6bhpp"]
-[ext_resource type="PackedScene" path="res://Art/SmallCandlesPositionned.tscn" id="7_n6w5r"]
+[ext_resource type="PackedScene" uid="uid://bbfcng4thdsle" path="res://Art/SmallCandlesPositionned.tscn" id="7_n6w5r"]
 [ext_resource type="PackedScene" uid="uid://dyjva6gp2fh00" path="res://Art/BigCandle.tscn" id="8_18dws"]
 [ext_resource type="PackedScene" uid="uid://2yhxgo1s80gs" path="res://UI/MainTutorial.tscn" id="9_trfjn"]
 [ext_resource type="PackedScene" uid="uid://dty5hawemf1bn" path="res://UI/UWonText.tscn" id="10_mim71"]
 [ext_resource type="PackedScene" uid="uid://bjqsh4k20y0jw" path="res://UI/Challenges.tscn" id="11_7rr4v"]
 [ext_resource type="PackedScene" uid="uid://iea6y3ip5ja8" path="res://UI/FailedMsg.tscn" id="12_55f3b"]
 [ext_resource type="PackedScene" uid="uid://dp6emi3xi1jw6" path="res://UI/PlayerControls.tscn" id="14_saalh"]
+[ext_resource type="PackedScene" uid="uid://dp0dasfi511kt" path="res://Art/Thunder.tscn" id="15_im8qv"]
 
 [sub_resource type="Curve2D" id="Curve2D_x62ub"]
 _data = {
@@ -146,6 +147,8 @@ offset_bottom = 2.0
 [node name="PlayerControls" parent="." index="10" instance=ExtResource("14_saalh")]
 position = Vector2(885, 582)
 scale = Vector2(1, 1)
+
+[node name="Thunder" parent="." index="11" instance=ExtResource("15_im8qv")]
 
 [connection signal="cleared_chalk" from="Chalk" to="." method="_on_chalk_cleared_chalk"]
 [connection signal="cleared_chalk" from="Chalk" to="ShapeDrawDetector" method="_on_chalk_cleared_chalk"]
