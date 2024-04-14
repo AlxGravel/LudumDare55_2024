@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dty5hawemf1bn"]
 
-[ext_resource type="PackedScene" path="res://UI/TextBox.tscn" id="1_1ab55"]
+[ext_resource type="PackedScene" uid="uid://cchhsv5fjvfiu" path="res://UI/TextBox.tscn" id="1_1ab55"]
 
 [node name="UWonText" type="Control"]
 layout_mode = 3

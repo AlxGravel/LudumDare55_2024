@@ -29,7 +29,8 @@ func _on_chalk_cleared_chalk():
 func _on_chalk_left_clicked():
 	if $MainTutorial != null:
 		$MainTutorial.nextTutorialStep()
-
+		if $MainTutorial.tutorialStep == 1:
+			$Chalk.can_draw = true
 
 
 
@@ -39,8 +40,5 @@ func _on_chalk_point_added(point):
 	if $ShapeDrawDetector.get_completion_rate() >= 1:
 		$CanvasLayer/UWonText.visible = true
 		$Chalk.can_draw = false
-	if $MainTutorial != null:
-		$MainTutorial.nextTutorialStep()
-		if $MainTutorial.tutorialStep == 1:
-			$Chalk.can_draw = true
-	
+
+

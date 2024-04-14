@@ -16,7 +16,7 @@ func _process(delta):
 
 func nextTutorialStep():
 	tutorialStep += 1
-	match tutorialStep: 
+	match tutorialStep:
 		1:
 			$Textbox02.visible=false
 			$Textbox03.visible=true
