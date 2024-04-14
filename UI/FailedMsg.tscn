@@ -1,7 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://iea6y3ip5ja8"]
+[gd_scene load_steps=7 format=3 uid="uid://iea6y3ip5ja8"]
 
 [ext_resource type="Script" path="res://UI/FailedMsg.gd" id="1_7otkn"]
 [ext_resource type="PackedScene" uid="uid://cchhsv5fjvfiu" path="res://UI/TextBox.tscn" id="1_ct23f"]
+[ext_resource type="Texture2D" uid="uid://dmwi7ba4xb2vc" path="res://UI/Textbox01.png" id="3_vmqa2"]
+
+[sub_resource type="Animation" id="Animation_6tblc"]
+resource_name = "FadeIn"
+length = 0.2
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Msg1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.568627)]
+}
+
+[sub_resource type="Animation" id="Animation_aspkm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Msg1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lmw47"]
+_data = {
+"FadeInMsg": SubResource("Animation_6tblc"),
+"RESET": SubResource("Animation_aspkm")
+}
 
 [node name="FailedMsg" type="Control"]
 layout_mode = 3
@@ -13,10 +64,23 @@ grow_vertical = 2
 script = ExtResource("1_7otkn")
 
 [node name="Msg1" parent="." instance=ExtResource("1_ct23f")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 390.0
 offset_top = 242.0
 offset_right = 745.0
 offset_bottom = 365.0
 text = "You must draw the circle on the model"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lmw47")
+}
+
+[node name="Black" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0)
+z_index = 3
+z_as_relative = false
+position = Vector2(552, 294)
+scale = Vector2(38.125, 38.125)
+texture = ExtResource("3_vmqa2")

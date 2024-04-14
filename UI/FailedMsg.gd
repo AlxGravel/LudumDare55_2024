@@ -13,9 +13,9 @@ func _process(delta):
 var current_msg
 func show_msg():
 	current_msg = $Msg1
-	$Msg1.visible = true
+	$AnimationPlayer.play("FadeInMsg")
 
 func hide_msg():
 	if current_msg != null:
-		current_msg.visible = false
+		$AnimationPlayer.play_backwards("FadeInMsg")
 		current_msg = null
