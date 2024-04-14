@@ -20,3 +20,14 @@ offset_top = 38.0
 offset_right = 399.0
 offset_bottom = 161.0
 text = "You feel faint..."
+
+[node name="Challenge2" parent="." instance=ExtResource("2_cl5um")]
+visible = false
+layout_mode = 0
+offset_left = 768.0
+offset_top = 36.0
+offset_right = 1123.0
+offset_bottom = 159.0
+text = "You become left handed"
+horizontal_alignment = 1
+vertical_alignment = 1

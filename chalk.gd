@@ -74,6 +74,7 @@ func _input(event):
 			lines.clear()
 			new_chalk_line()
 			remove_mess_timer()
+			right_hand()
 			cleared_chalk.emit()
 
 func new_chalk_line():
@@ -83,3 +84,11 @@ func new_chalk_line():
 
 func _on_area_2d_area_entered(area):
 	pass # Replace with function body.
+
+func left_hand():
+	$Cursor/righthand.visible = false
+	$Cursor/lefthand.visible = true
+
+func right_hand():
+	$Cursor/righthand.visible = true
+	$Cursor/lefthand.visible = false

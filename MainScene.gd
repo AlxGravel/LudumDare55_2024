@@ -1,6 +1,7 @@
 extends Label
 
 var slowdown_called_flag = false
+var polarityrev_called_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +26,7 @@ func _on_shape_draw_detector_drew_outside_model():
 
 func _on_chalk_cleared_chalk():
 	slowdown_called_flag = false
+	polarityrev_called_flag = false
 	$Chalk.can_draw = true
 	$Chalk.cursor_speed = 1
 	$BigCandleL.playburning()
@@ -51,11 +53,12 @@ func _on_chalk_point_added(point):
 	if completion_rate >= 1:
 		$CanvasLayer/UWonText.visible = true
 		$Chalk.can_draw = false
+	elif completion_rate > 0.5:
+		polarityrev()
 	elif completion_rate > 0.3:
 		slowdown()
 
 
-var challenge_timer = null
 func slowdown():
 	if slowdown_called_flag:
 		return
@@ -74,4 +77,20 @@ func slowdownImpl():
 	$Challenges.hide_all_challenges()
 
 
+func polarityrev():
+	if polarityrev_called_flag:
+		return
+	polarityrev_called_flag = true
+	$Challenges.show_challenge(2)
+	var timer = Timer.new()
+	timer.wait_time = 1
+	timer.one_shot = true
+	self.add_child(timer)
+	timer.start()
+	timer.timeout.connect(polarityrevImpl)
 
+
+func polarityrevImpl():
+	$Chalk.cursor_speed *= -1
+	$Chalk.left_hand()
+	$Challenges.hide_all_challenges()

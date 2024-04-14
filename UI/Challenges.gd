@@ -16,6 +16,8 @@ func show_challenge(index: int):
 	match index:
 		1:
 			visible_challenge = $Challenge1
+		2:
+			visible_challenge = $Challenge2
 	if visible_challenge != null:
 		visible_challenge.visible = true
 
