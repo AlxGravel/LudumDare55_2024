@@ -20,7 +20,7 @@ func nextTutorialStep():
 			$Textbox02.visible=false
 			$Textbox03.visible=true
 			$Black.visible=false
-			
+
 
 
 

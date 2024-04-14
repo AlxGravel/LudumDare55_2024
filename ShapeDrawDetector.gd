@@ -2,8 +2,8 @@ extends Node2D
 
 signal drew_outside_model
 
-@export var modelTolerance = 20
-@export var CompletionTolerance = modelTolerance
+@export var modelTolerance = 40
+@export var CompletionTolerance = 20
 
 var path_points_todo = Array()
 var total_points = 0

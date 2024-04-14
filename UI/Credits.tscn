@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://UI/Credits.gd" id="1_qr56g"]
 
-[sub_resource type="Gradient" id="Gradient_r05wa"]
+[sub_resource type="Gradient" id="Gradient_ocosi"]
 offsets = PackedFloat32Array(0.987952, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_s8eye"]
-gradient = SubResource("Gradient_r05wa")
+gradient = SubResource("Gradient_ocosi")
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15

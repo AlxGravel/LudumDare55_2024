@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ojxmbtcou5rk"]
+[gd_scene load_steps=25 format=3 uid="uid://ojxmbtcou5rk"]
 
 [ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://UI/FakeGamePlaceholder.tscn" id="1_17c4p"]
 [ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
@@ -57,6 +57,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 554, 344, 0, 0, 0, 0, 615, 338, 0, 0, 0, 0, 629, 284, 0, 0, 0, 0, 575, 256, 0, 0, 0, 0, 529, 293, 0, 0, 0, 0, 554, 344)
 }
 point_count = 6
+
+[sub_resource type="Gradient" id="Gradient_r05wa"]
+offsets = PackedFloat32Array(0.987952, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bdxyo"]
+gradient = SubResource("Gradient_r05wa")
 
 [node name="Label" instance=ExtResource("1_17c4p")]
 grow_horizontal = 2
@@ -150,9 +156,17 @@ scale = Vector2(1, 1)
 
 [node name="Thunder" parent="." index="11" instance=ExtResource("15_im8qv")]
 
+[node name="HideScreen" type="Sprite2D" parent="." index="12"]
+visible = false
+z_index = 99
+position = Vector2(602.869, 354.975)
+scale = Vector2(23.3166, 12.9383)
+texture = SubResource("GradientTexture2D_bdxyo")
+
 [connection signal="cleared_chalk" from="Chalk" to="." method="_on_chalk_cleared_chalk"]
 [connection signal="cleared_chalk" from="Chalk" to="ShapeDrawDetector" method="_on_chalk_cleared_chalk"]
 [connection signal="left_clicked" from="Chalk" to="." method="_on_chalk_left_clicked"]
 [connection signal="point_added" from="Chalk" to="." method="_on_chalk_point_added"]
 [connection signal="point_added" from="Chalk" to="ShapeDrawDetector" method="_on_chalk_point_added"]
 [connection signal="drew_outside_model" from="ShapeDrawDetector" to="." method="_on_shape_draw_detector_drew_outside_model"]
+[connection signal="candles_finished_burning" from="BigCandleL" to="." method="_on_big_candle_animation_finished"]

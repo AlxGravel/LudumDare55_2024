@@ -46,13 +46,13 @@ func stop_mess():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	$Cursor.position += get_tremor()
 
 
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		$Cursor.position += (event.relative * cursor_speed) + get_tremor()
+		$Cursor.position += event.relative * cursor_speed
 		#confine the cursor to the viewport
 		var visible_rect = get_viewport().get_visible_rect()
 		$Cursor.position = $Cursor.position.clamp(visible_rect.position, visible_rect.end)
@@ -85,9 +85,9 @@ func get_tremor() -> Vector2:
 		return Vector2(0,0)
 
 	if randi() % 2 == 0:
-		return Vector2(1,0) * tremor_size
+		return Vector2(tremor_size,0)
 	else:
-		return Vector2(0,1) * tremor_size
+		return Vector2(-tremor_size,0)
 
 	return Vector2(0,0)
 

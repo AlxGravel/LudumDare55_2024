@@ -23,6 +23,9 @@ func show_challenge(index: int):
 		3:
 			visible_challenge = $Challenge3
 			$AnimationPlayer.play("FadeInChallenge3")
+		4:
+			visible_challenge = $Challenge4
+			$AnimationPlayer.play("FadeInChallenge4")
 	if visible_challenge != null:
 		visible_challenge.visible = true
 
