@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbfcng4thdsle"]
+
+[ext_resource type="PackedScene" uid="uid://cj6c3cu6p42ql" path="res://Art/SmallCandle.tscn" id="1_5xkua"]
+
+[node name="SmallCandlesPositionned" type="Node2D"]
+z_index = 1
+z_as_relative = false
+
+[node name="SmallCandle" parent="." instance=ExtResource("1_5xkua")]
+position = Vector2(197, 484)
+
+[node name="SmallCandle2" parent="." instance=ExtResource("1_5xkua")]
+position = Vector2(835, 130)
+scale = Vector2(4.8, 4.8)
+
+[node name="SmallCandle3" parent="." instance=ExtResource("1_5xkua")]
+position = Vector2(281, 67)
+scale = Vector2(4.8, 4.8)
+
+[node name="SmallCandle4" parent="." instance=ExtResource("1_5xkua")]
+position = Vector2(777, 565)

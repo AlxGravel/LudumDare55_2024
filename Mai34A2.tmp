@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://2yhxgo1s80gs" path="res://UI/MainTutorial.tscn" id="9_trfjn"]
 [ext_resource type="PackedScene" uid="uid://dty5hawemf1bn" path="res://UI/UWonText.tscn" id="10_mim71"]
 [ext_resource type="PackedScene" uid="uid://bjqsh4k20y0jw" path="res://UI/Challenges.tscn" id="11_7rr4v"]
-[ext_resource type="PackedScene" uid="uid://iea6y3ip5ja8" path="res://UI/FailedMsg.tscn" id="12_55f3b"]
 
 [sub_resource type="Curve2D" id="Curve2D_x62ub"]
 _data = {
@@ -104,7 +103,7 @@ position = Vector2(227, 315)
 
 [node name="BigCandleR" parent="." index="4" instance=ExtResource("8_18dws")]
 z_index = 8
-position = Vector2(923, 315)
+position = Vector2(907, 315)
 scale = Vector2(-1, 1)
 
 [node name="MainTutorial" parent="." index="5" instance=ExtResource("9_trfjn")]
@@ -127,13 +126,6 @@ visible = false
 z_index = 10
 
 [node name="Challenges" parent="." index="7" instance=ExtResource("11_7rr4v")]
-layout_mode = 1
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 2.0
-offset_bottom = 2.0
-
-[node name="FailedMsg" parent="." index="8" instance=ExtResource("12_55f3b")]
 layout_mode = 1
 offset_left = 2.0
 offset_top = 2.0

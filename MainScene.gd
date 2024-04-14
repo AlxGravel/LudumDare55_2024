@@ -30,6 +30,8 @@ func _on_chalk_cleared_chalk():
 	$BigCandleL.playburning()
 	$BigCandleR.playburning()
 	$FailedMsg.hide_msg()
+	for candle in $SmallCandlesPositionned.get_children():
+		candle.playBurning()
 	if $MainTutorial != null:
 		$MainTutorial.queue_free()
 
