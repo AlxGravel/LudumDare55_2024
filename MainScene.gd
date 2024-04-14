@@ -2,6 +2,7 @@ extends Label
 
 var slowdown_called_flag = false
 var polarityrev_called_flag = false
+var tremors_called_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,8 +28,10 @@ func _on_shape_draw_detector_drew_outside_model():
 func _on_chalk_cleared_chalk():
 	slowdown_called_flag = false
 	polarityrev_called_flag = false
+	tremors_called_flag = false
 	$Chalk.can_draw = true
 	$Chalk.cursor_speed = 1
+	$Chalk.has_tremors = false
 	$BigCandleL.playburning()
 	$BigCandleR.playburning()
 	$FailedMsg.hide_msg()
@@ -55,6 +58,8 @@ func _on_chalk_point_added(point):
 	if completion_rate >= 1:
 		$CanvasLayer/UWonText.visible = true
 		$Chalk.can_draw = false
+	elif completion_rate > 0.2:
+		tremors()
 	elif completion_rate > 0.5:
 		polarityrev()
 	elif completion_rate > 0.3:
@@ -84,8 +89,10 @@ func polarityrev():
 		return
 	polarityrev_called_flag = true
 	$Challenges.show_challenge(2)
+
 	$Chalk.cursor_speed *= -1
 	$Chalk.left_hand()
+
 	var timer = Timer.new()
 	timer.wait_time = 5
 	timer.one_shot = true
@@ -93,7 +100,24 @@ func polarityrev():
 	timer.start()
 	timer.timeout.connect(polarityrevImpl)
 
-
 func polarityrevImpl():
-
 	$Challenges.hide_all_challenges()
+
+func tremors():
+	if tremors_called_flag:
+		return
+	tremors_called_flag = true
+	$Challenges.show_challenge(3)
+
+	$Chalk.has_tremors = true
+
+	var timer = Timer.new()
+	timer.wait_time = 5
+	timer.one_shot = true
+	self.add_child(timer)
+	timer.start()
+	timer.timeout.connect(tremorsImpl)
+
+func tremorsImpl():
+	$Challenges.hide_all_challenges()
+

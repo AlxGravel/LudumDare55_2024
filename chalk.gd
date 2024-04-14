@@ -7,7 +7,10 @@ signal left_clicked
 @export var cursor_speed = 1
 @export var can_draw = true
 @export var lines = [Line2D.new()]
+@export var has_tremors = false
+@export var tremor_size = 0.75
 var must_make_a_mess = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,7 +52,7 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		$Cursor.position += event.relative * cursor_speed
+		$Cursor.position += (event.relative * cursor_speed) + get_tremor()
 		#confine the cursor to the viewport
 		var visible_rect = get_viewport().get_visible_rect()
 		$Cursor.position = $Cursor.position.clamp(visible_rect.position, visible_rect.end)
@@ -76,6 +79,18 @@ func _input(event):
 			remove_mess_timer()
 			right_hand()
 			cleared_chalk.emit()
+
+func get_tremor() -> Vector2:
+	if not has_tremors:
+		return Vector2(0,0)
+
+	if randi() % 2 == 0:
+		return Vector2(1,0) * tremor_size
+	else:
+		return Vector2(0,1) * tremor_size
+
+	return Vector2(0,0)
+
 
 func new_chalk_line():
 	var newline = Line2D.new()
