@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dmwi7ba4xb2vc" path="res://UI/Textbox01.png" id="1_hhq7f"]
 
 [node name="TextBox" type="Label"]
-z_index = 2
+z_index = 6
+z_as_relative = false
 texture_filter = 1
 offset_right = 355.0
 offset_bottom = 123.0
@@ -12,6 +13,7 @@ text = "How is this text looking"
 autowrap_mode = 2
 
 [node name="Background" type="Sprite2D" parent="."]
+z_index = 5
 z_as_relative = false
 position = Vector2(168, 64)
 scale = Vector2(5.625, 5.625)

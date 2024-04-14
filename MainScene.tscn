@@ -96,22 +96,26 @@ curve = SubResource("Curve2D_pcr1s")
 curve = SubResource("Curve2D_1viow")
 
 [node name="BigCandleL" parent="." index="3" instance=ExtResource("8_18dws")]
+z_index = 8
 position = Vector2(227, 315)
 
 [node name="BigCandleR" parent="." index="4" instance=ExtResource("8_18dws")]
+z_index = 8
 position = Vector2(907, 315)
 scale = Vector2(-1, 1)
 
 [node name="MainTutorial" parent="." index="5" instance=ExtResource("9_trfjn")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -511.0
+offset_top = -307.5
+offset_right = -511.0
+offset_bottom = -307.5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
 
