@@ -24,6 +24,10 @@ aseprite_executable_path="E:/Steam/steamapps/common/Aseprite/Aseprite.exe"
 window/size/mode=3
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom_font="res://UI/Pixeboy.tres"
+
 [input]
 
 escape={

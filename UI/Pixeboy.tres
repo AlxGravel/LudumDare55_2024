@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bq5tr4ggp36lx"]
+
+[ext_resource type="FontFile" uid="uid://d2kkj4yoe021" path="res://UI/Pixeboy.ttf" id="1_3tm7d"]
+
+[resource]
+base_font = ExtResource("1_3tm7d")

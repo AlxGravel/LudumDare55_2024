@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cchhsv5fjvfiu"]
+
+[ext_resource type="Texture2D" uid="uid://dmwi7ba4xb2vc" path="res://UI/Textbox01.png" id="1_hhq7f"]
+
+[node name="TextBox" type="Label"]
+z_index = 2
+texture_filter = 1
+offset_right = 355.0
+offset_bottom = 123.0
+theme_override_font_sizes/font_size = 60
+text = "How is this text looking"
+autowrap_mode = 2
+
+[node name="Background" type="Sprite2D" parent="."]
+z_as_relative = false
+position = Vector2(168, 64)
+scale = Vector2(5.625, 5.625)
+texture = ExtResource("1_hhq7f")
