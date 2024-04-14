@@ -6,7 +6,6 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Textbox02.visible=true
-	$Textbox03.visible=false
 	$Black.visible=true
 
 
@@ -19,7 +18,7 @@ func nextTutorialStep():
 	match tutorialStep:
 		1:
 			$Textbox02.visible=false
-			$Textbox03.visible=true
 			$Black.visible=false
+			$PlayerControls.spawn()
 
 
