@@ -61,7 +61,7 @@ func _on_chalk_point_added(point):
 		$MainTutorial.nextTutorialStep()
 
 	var completion_rate = $ShapeDrawDetector.get_completion_rate()
-	if completion_rate >= 1:
+	if completion_rate >= 0.985:
 		$CanvasLayer/UWonText.visible = true
 		$Chalk.can_draw = false
 	elif completion_rate > 0.85:
