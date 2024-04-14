@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ojxmbtcou5rk"]
+[gd_scene load_steps=8 format=3 uid="uid://ojxmbtcou5rk"]
 
 [ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://UI/FakeGamePlaceholder.tscn" id="1_17c4p"]
 [ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://w13jfg1ee8cu" path="res://Art/Background.png" id="4_yr2vb"]
 [ext_resource type="Texture2D" uid="uid://drmsst85yb0pe" path="res://Art/Pentagram.png" id="5_elon3"]
 [ext_resource type="Script" path="res://Art/Pentagram.gd" id="6_s0scl"]
+[ext_resource type="PackedScene" uid="uid://b86lmgne55pln" path="res://Art/BigCandle.aseprite" id="7_xk2x0"]
 
 [node name="Label" instance=ExtResource("1_17c4p")]
 grow_horizontal = 2
@@ -25,3 +26,15 @@ modulate = Color(0.533333, 0, 0, 1)
 texture = ExtResource("5_elon3")
 centered = false
 script = ExtResource("6_s0scl")
+
+[node name="BigCandleL" parent="." index="2" instance=ExtResource("7_xk2x0")]
+position = Vector2(234, 308)
+scale = Vector2(5.625, 5.625)
+frame = 7
+frame_progress = 0.806782
+
+[node name="BigCandleL2" parent="." index="3" instance=ExtResource("7_xk2x0")]
+position = Vector2(903, 308)
+scale = Vector2(-5.625, 5.625)
+frame = 7
+frame_progress = 0.806782
