@@ -6,6 +6,7 @@ extends Label
 func _ready():
 	Input.use_accumulated_input = false
 	$Chalk.can_draw = false
+	$MainTutorial.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,13 +25,15 @@ func _on_chalk_cleared_chalk():
 	$BigCandleR.playburning()
 	if $MainTutorial != null:
 		$MainTutorial.queue_free()
-		$Chalk.can_draw = true
 		
+
 
 
 
 func _on_chalk_left_clicked():
 	if $MainTutorial != null:
 		$MainTutorial.nextTutorialStep()
-		
+		if $MainTutorial.tutorialStep == 1:
+			$Chalk.can_draw = true
+	
 		

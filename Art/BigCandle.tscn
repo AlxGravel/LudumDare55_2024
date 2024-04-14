@@ -96,8 +96,8 @@ libraries = {
 }
 
 [node name="SpriteFlame" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -51)
 scale = Vector2(8, 8)
 texture = ExtResource("3_rvl6s")
 hframes = 8
-frame = 7

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://2yhxgo1s80gs"]
+[gd_scene load_steps=4 format=3 uid="uid://2yhxgo1s80gs"]
 
 [ext_resource type="Script" path="res://UI/MainTutorial.gd" id="1_3blk5"]
 [ext_resource type="PackedScene" uid="uid://cchhsv5fjvfiu" path="res://UI/TextBox.tscn" id="1_3ewy4"]
+[ext_resource type="Texture2D" uid="uid://dmwi7ba4xb2vc" path="res://UI/Textbox01.png" id="3_n8enh"]
 
 [node name="MainTutorial" type="Control"]
 z_index = 10
@@ -17,47 +18,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3blk5")
 
-[node name="Textbox01" parent="." instance=ExtResource("1_3ewy4")]
+[node name="Textbox02" parent="." instance=ExtResource("1_3ewy4")]
 z_index = 10
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.062
-anchor_top = -0.071
-anchor_right = -0.062
-anchor_bottom = -0.071
-offset_left = 408.424
-offset_top = 81.008
-offset_right = 763.424
-offset_bottom = 204.008
-theme_override_font_sizes/font_size = 50
-text = "trace the pentagram to summon spirits"
-
-[node name="Textbox02" parent="." instance=ExtResource("1_3ewy4")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.065
-anchor_top = -0.07
-anchor_right = -0.065
-anchor_bottom = -0.07
-offset_left = 415.88
-offset_top = 298.36
-offset_right = 770.88
-offset_bottom = 421.36
+offset_left = 341.0
+offset_top = 253.0
+offset_right = 696.0
+offset_bottom = 376.0
 theme_override_font_sizes/font_size = 50
 text = "you have until these candles melt completely"
 
 [node name="Textbox03" parent="." instance=ExtResource("1_3ewy4")]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.064
-anchor_top = -0.067
-anchor_right = -0.064
-anchor_bottom = -0.067
-offset_left = 412.728
-offset_top = 184.416
-offset_right = 767.728
-offset_bottom = 307.416
+offset_left = 341.0
+offset_top = 50.0
+offset_right = 696.0
+offset_bottom = 173.0
+pivot_offset = Vector2(123, -81)
 theme_override_font_sizes/font_size = 39
 text = "Left-click to draw
 
-Right-click to start"
+Right-click to clear"
+
+[node name="Black" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_as_relative = false
+position = Vector2(523, 261.5)
+scale = Vector2(32.825, 32.825)
+texture = ExtResource("3_n8enh")
