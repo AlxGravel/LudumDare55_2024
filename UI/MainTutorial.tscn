@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://2yhxgo1s80gs"]
+[gd_scene load_steps=3 format=3 uid="uid://cqbdils6oiv7o"]
 
 [ext_resource type="Script" path="res://UI/MainTutorial.gd" id="1_3blk5"]
-[ext_resource type="PackedScene" uid="uid://cchhsv5fjvfiu" path="res://UI/TextBox.tscn" id="1_3ewy4"]
+[ext_resource type="PackedScene" path="res://UI/TextBox.tscn" id="1_3ewy4"]
 
 [node name="MainTutorial" type="Control"]
 z_index = 10

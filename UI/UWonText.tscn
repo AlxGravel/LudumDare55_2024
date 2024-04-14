@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dty5hawemf1bn"]
+
+[ext_resource type="PackedScene" path="res://UI/TextBox.tscn" id="1_1ab55"]
+
+[node name="UWonText" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextBox" parent="." instance=ExtResource("1_1ab55")]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 245.0
+offset_right = 756.0
+offset_bottom = 368.0
+text = "Congrats you devil !"
+horizontal_alignment = 1
+vertical_alignment = 1

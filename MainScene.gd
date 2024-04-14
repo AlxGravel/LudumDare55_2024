@@ -25,12 +25,18 @@ func _on_chalk_cleared_chalk():
 	if $MainTutorial != null:
 		$MainTutorial.queue_free()
 		$Chalk.can_draw = true
-		
+
 
 
 
 func _on_chalk_left_clicked():
 	if $MainTutorial != null:
 		$MainTutorial.nextTutorialStep()
-		
-		
+
+
+
+
+func _on_chalk_point_added(point):
+	if $ShapeDrawDetector.get_completion_rate() >= 1:
+		$CanvasLayer/UWonText.visible = true
+		$Chalk.can_draw = false

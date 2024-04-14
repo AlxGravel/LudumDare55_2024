@@ -8,19 +8,26 @@ signal drew_outside_model
 var path_points_todo = Array()
 var total_points = 0
 var completionRate = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
+
+func populate_todo_points():
+	path_points_todo.clear()
 	for path in get_children():
 		if path is Path2D:
 			for p in path.curve.get_baked_points():
 				path_points_todo.push_back(p)
 	total_points = path_points_todo.size()
 
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	populate_todo_points()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
+func get_completion_rate():
+	return completionRate
 
 func _on_chalk_point_added(point):
 	#check if the point drawn is outside area
@@ -56,3 +63,7 @@ func compute_precision() -> float:
 		if not (path is Path2D):
 			continue
 	return 0
+
+
+func _on_chalk_cleared_chalk():
+	populate_todo_points()

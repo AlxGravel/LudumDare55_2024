@@ -36,20 +36,21 @@ func _input(event):
 
 	elif event is InputEventMouseButton:
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			lines.push_back(Line2D.new())
-			self.add_child(lines.back())
-			left_clicked.emit()	
+			new_chalk_line()
+			left_clicked.emit()
 
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			#clear chalk
 			for line in lines:
 				line.queue_free()
 			lines.clear()
-			lines.push_back(Line2D.new())
-			self.add_child(lines.back())
+			new_chalk_line()
 			cleared_chalk.emit()
-			
 
+func new_chalk_line():
+	var newline = Line2D.new()
+	lines.push_back(newline)
+	self.add_child(lines.back())
 
 func _on_area_2d_area_entered(area):
 	pass # Replace with function body.
