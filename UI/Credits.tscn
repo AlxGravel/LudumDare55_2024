@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bevljc1ihb7c0"]
+[gd_scene load_steps=4 format=3 uid="uid://bevljc1ihb7c0"]
 
 [ext_resource type="Script" path="res://UI/Credits.gd" id="1_qr56g"]
+
+[sub_resource type="Gradient" id="Gradient_r05wa"]
+offsets = PackedFloat32Array(0.987952, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s8eye"]
+gradient = SubResource("Gradient_r05wa")
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -9,6 +15,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qr56g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(602.869, 354.975)
+scale = Vector2(23.3166, 12.9383)
+texture = SubResource("GradientTexture2D_s8eye")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -49,7 +60,8 @@ vertical_alignment = 1
 [node name="Fauxgrammeur" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "Fauxgrammeur
+text = "Artisiquement Fauxgrammeur
+(everything. you're amazing man)
 
 "
 horizontal_alignment = 1

@@ -59,9 +59,9 @@ func _on_chalk_point_added(point):
 		$CanvasLayer/UWonText.visible = true
 		$Chalk.can_draw = false
 	elif completion_rate > 0.7:
-		tremors()
-	elif completion_rate > 0.5:
 		polarityrev()
+	elif completion_rate > 0.5:
+		tremors()
 	elif completion_rate > 0.3:
 		slowdown()
 
