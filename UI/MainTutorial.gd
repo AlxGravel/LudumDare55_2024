@@ -18,7 +18,9 @@ func nextTutorialStep():
 	match tutorialStep:
 		1:
 			$Textbox02.visible=false
+			$Textbox03.visible=true
 			$Black.visible=false
+			
 
 
 
