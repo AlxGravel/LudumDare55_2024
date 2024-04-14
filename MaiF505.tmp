@@ -71,6 +71,7 @@ centered = false
 script = ExtResource("6_s0scl")
 
 [node name="ShapeDrawDetector" parent="." index="2" instance=ExtResource("7_6bhpp")]
+modelTolerance = null
 
 [node name="Path2D" type="Path2D" parent="ShapeDrawDetector" index="0"]
 curve = SubResource("Curve2D_x62ub")
