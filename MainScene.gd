@@ -73,7 +73,7 @@ func slowdown():
 	$Challenges.show_challenge(1)
 	$Chalk.cursor_speed = 0.2
 	var timer = Timer.new()
-	timer.wait_time = 5
+	timer.wait_time = 8
 	timer.one_shot = true
 	self.add_child(timer)
 	timer.start()
@@ -94,7 +94,7 @@ func polarityrev():
 	$Chalk.left_hand()
 
 	var timer = Timer.new()
-	timer.wait_time = 5
+	timer.wait_time = 8
 	timer.one_shot = true
 	self.add_child(timer)
 	timer.start()
@@ -112,7 +112,7 @@ func tremors():
 	$Chalk.has_tremors = true
 
 	var timer = Timer.new()
-	timer.wait_time = 5
+	timer.wait_time = 8
 	timer.one_shot = true
 	self.add_child(timer)
 	timer.start()

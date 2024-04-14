@@ -19,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_3blk5")
 
 [node name="Textbox02" parent="." instance=ExtResource("1_3ewy4")]
+visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = -1
@@ -27,7 +28,9 @@ offset_top = 253.0
 offset_right = 696.0
 offset_bottom = 376.0
 theme_override_font_sizes/font_size = 50
-text = "you have until these candles melt completely"
+text = "trace the pentagram before these candles melt"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Textbox03" parent="." instance=ExtResource("1_3ewy4")]
 visible = false
@@ -35,14 +38,14 @@ z_index = 10
 layout_mode = 1
 anchors_preset = -1
 offset_left = 341.0
-offset_top = 50.0
+offset_top = 253.0
 offset_right = 696.0
-offset_bottom = 173.0
+offset_bottom = 376.0
 pivot_offset = Vector2(123, -81)
 theme_override_font_sizes/font_size = 39
-text = "Left-click to draw
-
-Right-click to clear"
+text = "Right-click to light the candles"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Black" type="Sprite2D" parent="."]
 visible = false

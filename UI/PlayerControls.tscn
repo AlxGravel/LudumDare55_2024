@@ -65,7 +65,7 @@ text = "   ->
 [node name="Actions" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Draw
+text = "trace
 clear"
 horizontal_alignment = 2
 
