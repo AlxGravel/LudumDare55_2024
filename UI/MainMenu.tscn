@@ -22,6 +22,18 @@ position = Vector2(602.869, 354.975)
 scale = Vector2(23.3166, 12.9383)
 texture = SubResource("GradientTexture2D_2hleb")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 407.0
+offset_top = 130.0
+offset_right = 1031.0
+offset_bottom = 312.0
+scale = Vector2(0.511, 1)
+theme_override_font_sizes/font_size = 100
+text = "Of Wax & Chalk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
