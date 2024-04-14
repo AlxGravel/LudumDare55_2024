@@ -9,5 +9,3 @@ func _ready():
 func _process(delta):
 	elapsedtime += delta
 	modulate = Color((sin(elapsedtime)+1)/4,0,0,1)
-
-

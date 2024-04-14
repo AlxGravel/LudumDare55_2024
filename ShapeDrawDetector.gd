@@ -2,7 +2,7 @@ extends Node2D
 
 signal drew_outside_model
 
-@export var modelTolerance = 10
+@export var modelTolerance = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
