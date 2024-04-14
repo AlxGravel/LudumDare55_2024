@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwx4nd4ykl8rm"]
-
-[ext_resource type="PackedScene" uid="uid://b86lmgne55pln" path="res://Art/BigCandle.aseprite" id="1_5ubce"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="BigCandle" parent="." instance=ExtResource("1_5ubce")]
-scale = Vector2(5.625, 5.625)

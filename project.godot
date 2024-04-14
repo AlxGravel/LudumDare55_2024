@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 aseprite_executable_path="E:/Steam/steamapps/common/Aseprite/Aseprite.exe"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg")
-
 [input]
 
 escape={
