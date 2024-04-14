@@ -11,8 +11,6 @@ func _process(delta):
 	pass
 
 func show_challenge(index: int):
-	if visible_challenge != null:
-		visible_challenge.visible = false
 	match index:
 		1:
 			visible_challenge = $Challenge1
@@ -31,5 +29,6 @@ func show_challenge(index: int):
 
 
 func hide_all_challenges():
-	if visible_challenge != null:
-		visible_challenge.visible = false
+	for child in get_children():
+		if child is CanvasItem:
+			child.visible = false

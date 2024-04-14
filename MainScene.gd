@@ -63,7 +63,7 @@ func _on_chalk_point_added(point):
 	if completion_rate >= 1:
 		$CanvasLayer/UWonText.visible = true
 		$Chalk.can_draw = false
-	elif completion_rate > 0.8:
+	elif completion_rate > 0.85:
 		quicken()
 	elif completion_rate > 0.7:
 		polarityrev()
@@ -134,7 +134,7 @@ func quicken():
 	quicken_called_flag = true
 	$Challenges.show_challenge(4)
 
-	$Chalk.cursor_speed = 2
+	$Chalk.cursor_speed = 1
 
 	var timer = Timer.new()
 	timer.wait_time = 8
