@@ -64,8 +64,9 @@ func slowdown():
 		return
 	slowdown_called_flag = true
 	$Challenges.show_challenge(1)
+	$Chalk.cursor_speed = 0.2
 	var timer = Timer.new()
-	timer.wait_time = 1
+	timer.wait_time = 5
 	timer.one_shot = true
 	self.add_child(timer)
 	timer.start()
@@ -73,7 +74,6 @@ func slowdown():
 
 
 func slowdownImpl():
-	$Chalk.cursor_speed = 0.2
 	$Challenges.hide_all_challenges()
 
 
@@ -82,8 +82,10 @@ func polarityrev():
 		return
 	polarityrev_called_flag = true
 	$Challenges.show_challenge(2)
+	$Chalk.cursor_speed *= -1
+	$Chalk.left_hand()
 	var timer = Timer.new()
-	timer.wait_time = 1
+	timer.wait_time = 5
 	timer.one_shot = true
 	self.add_child(timer)
 	timer.start()
@@ -91,6 +93,5 @@ func polarityrev():
 
 
 func polarityrevImpl():
-	$Chalk.cursor_speed *= -1
-	$Chalk.left_hand()
+
 	$Challenges.hide_all_challenges()
