@@ -19,6 +19,6 @@ func nextTutorialStep():
 		1:
 			$Textbox02.visible=false
 			$Black.visible=false
-			$PlayerControls.spawn()
+
 
 

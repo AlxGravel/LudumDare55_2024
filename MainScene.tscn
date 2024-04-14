@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ojxmbtcou5rk"]
+[gd_scene load_steps=22 format=3 uid="uid://ojxmbtcou5rk"]
 
 [ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://UI/FakeGamePlaceholder.tscn" id="1_17c4p"]
 [ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dty5hawemf1bn" path="res://UI/UWonText.tscn" id="10_mim71"]
 [ext_resource type="PackedScene" uid="uid://bjqsh4k20y0jw" path="res://UI/Challenges.tscn" id="11_7rr4v"]
 [ext_resource type="PackedScene" uid="uid://iea6y3ip5ja8" path="res://UI/FailedMsg.tscn" id="12_55f3b"]
+[ext_resource type="PackedScene" uid="uid://dp6emi3xi1jw6" path="res://UI/PlayerControls.tscn" id="14_saalh"]
 
 [sub_resource type="Curve2D" id="Curve2D_x62ub"]
 _data = {
@@ -141,6 +142,10 @@ offset_left = 2.0
 offset_top = 2.0
 offset_right = 2.0
 offset_bottom = 2.0
+
+[node name="PlayerControls" parent="." index="10" instance=ExtResource("14_saalh")]
+position = Vector2(885, 582)
+scale = Vector2(1, 1)
 
 [connection signal="cleared_chalk" from="Chalk" to="." method="_on_chalk_cleared_chalk"]
 [connection signal="cleared_chalk" from="Chalk" to="ShapeDrawDetector" method="_on_chalk_cleared_chalk"]
