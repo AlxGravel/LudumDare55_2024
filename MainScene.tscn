@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ojxmbtcou5rk"]
+[gd_scene load_steps=17 format=3 uid="uid://ojxmbtcou5rk"]
 
 [ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://UI/FakeGamePlaceholder.tscn" id="1_17c4p"]
 [ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://drmsst85yb0pe" path="res://Art/Pentagram.png" id="5_elon3"]
 [ext_resource type="Script" path="res://Art/Pentagram.gd" id="6_s0scl"]
 [ext_resource type="PackedScene" uid="uid://caoob312y5h2w" path="res://ShapeDrawDetector.tscn" id="7_6bhpp"]
-[ext_resource type="PackedScene" path="res://Art/BigCandle.tscn" id="8_18dws"]
+[ext_resource type="PackedScene" uid="uid://dyjva6gp2fh00" path="res://Art/BigCandle.tscn" id="8_18dws"]
+[ext_resource type="PackedScene" uid="uid://2yhxgo1s80gs" path="res://UI/MainTutorial.tscn" id="9_trfjn"]
 
 [sub_resource type="Curve2D" id="Curve2D_x62ub"]
 _data = {
@@ -100,6 +101,18 @@ position = Vector2(227, 315)
 position = Vector2(907, 315)
 scale = Vector2(-1, 1)
 
+[node name="MainTutorial" parent="." index="5" instance=ExtResource("9_trfjn")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [connection signal="cleared_chalk" from="Chalk" to="." method="_on_chalk_cleared_chalk"]
+[connection signal="left_clicked" from="Chalk" to="." method="_on_chalk_left_clicked"]
 [connection signal="point_added" from="Chalk" to="ShapeDrawDetector" method="_on_chalk_point_added"]
 [connection signal="drew_outside_model" from="ShapeDrawDetector" to="." method="_on_shape_draw_detector_drew_outside_model"]

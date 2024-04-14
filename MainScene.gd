@@ -5,6 +5,7 @@ extends Label
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.use_accumulated_input = false
+	$Chalk.can_draw = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,3 +22,15 @@ func _on_chalk_cleared_chalk():
 	$Chalk.can_draw = true
 	$BigCandleL.playburning()
 	$BigCandleR.playburning()
+	if $MainTutorial != null:
+		$MainTutorial.queue_free()
+		$Chalk.can_draw = true
+		
+
+
+
+func _on_chalk_left_clicked():
+	if $MainTutorial != null:
+		$MainTutorial.nextTutorialStep()
+		
+		
