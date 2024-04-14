@@ -33,7 +33,7 @@ func _on_chalk_cleared_chalk():
 	for candle in $SmallCandlesPositionned.get_children():
 		candle.playBurning()
 	if $MainTutorial != null:
-		$MainTutorial.queue_free()
+		$MainTutorial.visible = false
 
 func _on_chalk_left_clicked():
 	if $MainTutorial != null:

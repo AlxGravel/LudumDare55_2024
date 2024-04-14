@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ojxmbtcou5rk"]
+[gd_scene load_steps=21 format=3 uid="uid://ojxmbtcou5rk"]
 
 [ext_resource type="PackedScene" uid="uid://c7xhuhadnlplm" path="res://UI/FakeGamePlaceholder.tscn" id="1_17c4p"]
 [ext_resource type="Script" path="res://MainScene.gd" id="2_qk5gl"]
@@ -133,14 +133,14 @@ offset_top = 2.0
 offset_right = 2.0
 offset_bottom = 2.0
 
-[node name="FailedMsg" parent="." index="8" instance=ExtResource("12_55f3b")]
+[node name="SmallCandlesPositionned" parent="." index="8" instance=ExtResource("7_n6w5r")]
+
+[node name="FailedMsg" parent="." index="9" instance=ExtResource("12_55f3b")]
 layout_mode = 1
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 2.0
 offset_bottom = 2.0
-
-[node name="SmallCandlesPositionned" parent="." index="8" instance=ExtResource("7_n6w5r")]
 
 [connection signal="cleared_chalk" from="Chalk" to="." method="_on_chalk_cleared_chalk"]
 [connection signal="cleared_chalk" from="Chalk" to="ShapeDrawDetector" method="_on_chalk_cleared_chalk"]
