@@ -20,4 +20,5 @@ func show_challenge(index: int):
 		visible_challenge.visible = true
 
 func hide_all_challenges():
-	visible_challenge.visible = false
+	if visible_challenge != null:
+		visible_challenge.visible = false
