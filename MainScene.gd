@@ -24,6 +24,8 @@ func _on_chalk_cleared_chalk():
 	$Chalk.cursor_speed = 1
 	$BigCandleL.playburning()
 	$BigCandleR.playburning()
+	for candle in $SmallCandlesPositionned.get_children():
+		candle.playBurning()
 	if $MainTutorial != null:
 		$MainTutorial.queue_free()
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyjva6gp2fh00"]
+[gd_scene load_steps=9 format=3 uid="uid://dyjva6gp2fh00"]
 
 [ext_resource type="Script" path="res://Art/BigCandle.gd" id="1_jh10b"]
 [ext_resource type="Texture2D" uid="uid://d131dycigcbto" path="res://Art/BigCandle.png" id="2_tc7u6"]
 [ext_resource type="Texture2D" uid="uid://dghsh8uyxx1xr" path="res://Art/BigCandleFlame.png" id="3_rvl6s"]
+[ext_resource type="Texture2D" uid="uid://cedp7s08b3iub" path="res://Art/CandleAura.png" id="4_pmpq0"]
 
 [sub_resource type="Animation" id="Animation_pbjdw"]
 resource_name = "FlameMoving"
@@ -58,6 +59,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Aura:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_i52fj"]
 length = 0.001
@@ -86,6 +99,8 @@ position = Vector2(66, 60)
 script = ExtResource("1_jh10b")
 
 [node name="SpriteCandle" type="Sprite2D" parent="."]
+z_index = 4
+z_as_relative = false
 scale = Vector2(5.625, 5.625)
 texture = ExtResource("2_tc7u6")
 hframes = 12
@@ -97,7 +112,17 @@ libraries = {
 
 [node name="SpriteFlame" type="Sprite2D" parent="."]
 visible = false
+z_index = 4
+z_as_relative = false
 position = Vector2(0, -51)
 scale = Vector2(8, 8)
 texture = ExtResource("3_rvl6s")
 hframes = 8
+
+[node name="Aura" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.321569)
+z_as_relative = false
+position = Vector2(-1, 2)
+scale = Vector2(10, 10)
+texture = ExtResource("4_pmpq0")
