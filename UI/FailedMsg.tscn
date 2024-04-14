@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://iea6y3ip5ja8"]
+
+[ext_resource type="Script" path="res://UI/FailedMsg.gd" id="1_7otkn"]
+[ext_resource type="PackedScene" uid="uid://cchhsv5fjvfiu" path="res://UI/TextBox.tscn" id="1_ct23f"]
+
+[node name="FailedMsg" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7otkn")
+
+[node name="Msg1" parent="." instance=ExtResource("1_ct23f")]
+visible = false
+layout_mode = 0
+offset_left = 390.0
+offset_top = 242.0
+offset_right = 745.0
+offset_bottom = 365.0
+text = "You must draw the circle on the model"

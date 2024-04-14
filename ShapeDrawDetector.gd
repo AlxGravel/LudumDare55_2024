@@ -67,3 +67,4 @@ func compute_precision() -> float:
 
 func _on_chalk_cleared_chalk():
 	populate_todo_points()
+	completionRate = 0

@@ -1,6 +1,6 @@
 extends Label
 
-
+var slowdown_called_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,13 +17,19 @@ func _process(delta):
 
 
 func _on_shape_draw_detector_drew_outside_model():
-	$Chalk.can_draw = false
+	$Chalk.make_a_mess()
+	$FailedMsg.show_msg()
+	$Challenges.hide_all_challenges()
+
+
 
 func _on_chalk_cleared_chalk():
+	slowdown_called_flag = false
 	$Chalk.can_draw = true
 	$Chalk.cursor_speed = 1
 	$BigCandleL.playburning()
 	$BigCandleR.playburning()
+	$FailedMsg.hide_msg()
 	if $MainTutorial != null:
 		$MainTutorial.queue_free()
 
@@ -46,7 +52,8 @@ func _on_chalk_point_added(point):
 	elif completion_rate > 0.3:
 		slowdown()
 
-var slowdown_called_flag = false
+
+var challenge_timer = null
 func slowdown():
 	if slowdown_called_flag:
 		return
@@ -63,4 +70,6 @@ func slowdown():
 func slowdownImpl():
 	$Chalk.cursor_speed = 0.2
 	$Challenges.hide_all_challenges()
+
+
 
