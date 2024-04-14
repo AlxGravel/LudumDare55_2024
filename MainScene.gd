@@ -44,6 +44,7 @@ func _on_chalk_cleared_chalk():
 		candle.playBurning()
 	if $MainTutorial != null:
 		$MainTutorial.visible = false
+		$Thunder.thunderAnim()
 
 
 func _on_chalk_left_clicked():
