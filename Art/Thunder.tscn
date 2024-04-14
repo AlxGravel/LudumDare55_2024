@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp0dasfi511kt"]
+[gd_scene load_steps=6 format=3 uid="uid://dp0dasfi511kt"]
 
 [ext_resource type="Texture2D" uid="uid://2autjirpuld7" path="res://Art/Window.png" id="1_cjqku"]
 [ext_resource type="Script" path="res://Art/Thunder.gd" id="1_vr0gy"]
+[ext_resource type="AudioStream" uid="uid://boekt2mn4llu6" path="res://SFX_Thunder_NotLound.wav" id="3_3ovia"]
 
 [sub_resource type="Animation" id="Animation_g8ntc"]
 resource_name = "Flash"
@@ -20,6 +21,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_3ovia")
+}],
+"times": PackedFloat32Array(2.05)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n63eb"]
 _data = {
@@ -45,3 +61,5 @@ root_node = NodePath("../AnimationPlayerCrap")
 libraries = {
 "": SubResource("AnimationLibrary_n63eb")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

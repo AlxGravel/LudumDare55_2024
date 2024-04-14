@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4f5xwstnqqau"]
+
+[ext_resource type="AudioStream" uid="uid://cbex2ob5tikcl" path="res://SFX_Rain.wav" id="1_m3uvn"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_m3uvn")
+volume_db = -6.0
+autoplay = true

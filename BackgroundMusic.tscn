@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmdmroog1wu5r"]
+
+[ext_resource type="AudioStream" uid="uid://smrkhw372h0f" path="res://OfChalkAndWax_MU.wav" id="1_a130p"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_a130p")
+volume_db = -6.0
+autoplay = true
