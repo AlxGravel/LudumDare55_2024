@@ -51,7 +51,6 @@ func _on_chalk_left_clicked():
 	if $MainTutorial != null:
 		$MainTutorial.nextTutorialStep()
 		if $MainTutorial.tutorialStep == 1:
-			$Chalk.can_draw = true
 			$PlayerControls.spawn()
 
 
